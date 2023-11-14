@@ -43,4 +43,6 @@ if __name__ == "__main__":
             clickIn(f'//*[@id="components-root"]/div[1]/div/div[4]/div/div/div[2]/div/div/div[6]/div[2]/ul/li[{j}]', 6)
             print('after')
 
+    # Text of branchB v3
+
     input()
