@@ -1,0 +1,1 @@
+firebase_url = "https://stock-ranker-a2862-default-rtdb.firebaseio.com/"

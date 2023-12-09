@@ -1,5 +1,5 @@
 from tickers import *
-from listOfInvestorsRecord import ListOfInvestorsRecord
+# from investorsRecordStorer import InvestorsRecordStorer
 
 inv1 = InvestorsRecord('Bob')
 inv1.add_ticker_info('AAPL', 0)
@@ -30,22 +30,17 @@ inv2.add_percentage_for_each_ticker_from_total()
 inv3.add_percentage_for_each_ticker_from_total()
 inv4.add_percentage_for_each_ticker_from_total()
 
-lst_of_invest = ListOfInvestorsRecord()
-lst_of_invest.append_investors_record(inv1)
-lst_of_invest.append_investors_record(inv2)
-lst_of_invest.append_investors_record(inv3)
-lst_of_invest.append_investors_record(inv4)
+data = inv4.get_self_serialized_data()
+inv1.load_data(data)
+print(inv1.dict_ticker_info)
+
+# lst_of_invest = InvestorsRecordStorer()
+# lst_of_invest.store_investors_record_in_db(inv1)
+# lst_of_invest.store_investors_record_in_db(inv2)
+# lst_of_invest.store_investors_record_in_db(inv3)
+# lst_of_invest.store_investors_record_in_db(inv4)
 
 # lst_of_invest._fill_ticker_summatories()
 
 # print(inv1.dict_ticker_info)
 
-lst1 = lst_of_invest.get_ranked_list(40, 60)
-
-print(lst_of_invest.all_tickers_summatory_of_maket_cap.dict_ticker_info)
-print('\n')
-print(lst_of_invest.all_tickers_summatory_of_contribution.dict_ticker_info)
-
-
-print('\n')
-print(lst1)
